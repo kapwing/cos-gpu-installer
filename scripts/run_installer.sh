@@ -45,6 +45,9 @@ setup() {
 
 main() {
   setup
+
+  docker rm -fv "nvidia-installer-container" || true
+
   docker run \
     --privileged \
     --net=host \
@@ -53,6 +56,7 @@ main() {
     --volume /dev:/dev \
     --volume "/":"${ROOT_MOUNT_DIR}" \
     --env-file "${_GPU_INSTALLER_ENV_PATH}" \
+    --name "nvidia-installer-container" \
     "${COS_NVIDIA_INSTALLER_CONTAINER}"
   # Verify installation.
   ${NVIDIA_INSTALL_DIR_HOST}/bin/nvidia-smi

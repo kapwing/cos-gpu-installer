@@ -17,7 +17,7 @@ gcloud compute instances create gpu-instance-fresh-template \
     --shielded-integrity-monitoring \
     --metadata-from-file "cos-gpu-installer-env=scripts/gpu-installer-env,user-data=install-test-gpu.cfg,run-installer-script=scripts/run_installer.sh,run-cuda-test-script=scripts/run_cuda_test.sh"
 ```
-Wait a while after running because the nvidia drivers need to install
+Wait about 10 minutes after running because the nvidia drivers need to install
 
 Stop the instance
 
