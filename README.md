@@ -1,4 +1,4 @@
-Create the instance to convert to a machine image
+Create the instance to convert to an Image
 ``` shell
 gcloud compute instances create gpu-instance-fresh-template \
     --zone=us-west1-b \
